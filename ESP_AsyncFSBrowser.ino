@@ -8,16 +8,13 @@
 #include <ESPAsyncWebServer.h>
 #include <SPIFFSEditor.h>
 
-
 #include "js.h"
 #include "html.h"
 #include "HtmlFileClass.h"
-//#include "ESP8266Webduino.h"
 #include <string.h>
 #include <EEPROM.h>
 #include "EEPROMAnything.h"
 #include "user_interface.h"
-//#include "wol.h"
 #include "Logger.h"
 #include "HttpHelper.h"
 #include "JSON.h"
@@ -43,8 +40,6 @@ const char* http_username = "admin";
 const char* http_password = "admin";
 
 
-
-
 Logger logger;
 String sensorNames = "";
 const char* ssidx = "Telecom-29545833";
@@ -68,11 +63,7 @@ String showChangeSettings(AsyncWebServerRequest *request);
 String receiveCommand(String jsonString);
 
 String showSettings(AsyncWebServerRequest *request);
-//void showPage(String data);
-//void getPostdata(char *data, int maxposdata);
-//String getPostdata();
 
-//int parsePostdata(const char* data, const char* param, char* value);
 String getJsonStatus();
 String getJsonSensorsStatus(AsyncWebServerRequest *request);
 String getJsonActuatorsStatus(AsyncWebServerRequest *request);
@@ -81,17 +72,13 @@ String getJsonSettings(AsyncWebServerRequest *request);
 String showIODevices(AsyncWebServerRequest *request);
 String showHeater(AsyncWebServerRequest *request);
 String showChangeIODevices(AsyncWebServerRequest *request);
-//String showPower(AsyncWebServerRequest *request);
 String softwareReset(AsyncWebServerRequest *request);
-//String showIndex();
 String setRemoteTemperature(AsyncWebServerRequest *request);
-//String getFile(String filename);
-//void sendFile(String header, const char * file);
 
 // Create an instance of the server
 // specify the port to listen on as an argument
-WiFiServer server(80);
-WiFiClient client;
+//WiFiServer server(80);
+//WiFiClient client;
 
 const int maxposdataChangeSetting = 150;
 char databuff[maxposdataChangeSetting];
@@ -540,21 +527,21 @@ String showRele(AsyncWebServerRequest *request) {
 		data += String(buffer);
 
 		data += F("</body></html>");
-		client.println(data);
+		//client.println(data);
 	//}
 
 		
 	logger.print(tag, F("\n\t<<end show rele\n"));
 	return data;
 }
-void showPage(String data) {
+/*void showPage(String data) {
 
 	logger.println(tag, "showPage ");
 
 	client.println(data);
 	delay(1000);
 	//client.stop();
-}
+}*/
 String showIODevices(AsyncWebServerRequest *request)
 {
 	logger.println(tag, F("showIODevices "));
@@ -1205,7 +1192,7 @@ void checkOTA()
 
 	//ArduinoOTA.handle();  uesta chiamata deve essere messa in loop()
 }
-void showwol(String param) {
+String showwol(String param) {
 
 	logger.println(tag, F("showwol "));
 
@@ -1216,11 +1203,11 @@ void showwol(String param) {
 
 	String data;
 	data += "";
-	data += F("HTTP/1.1 200 OK\r\nContent-Type: text/html");
-	data += F("\n\n<html><head><meta HTTP-EQUIV='REFRESH' content='0; url=/main?msg=2'><title>WOL</title></head><body>");
+	data += F("<html><head><meta HTTP-EQUIV='REFRESH' content='0; url=/main?msg=2'><title>WOL</title></head><body>");
 	data += F("</body></html>");
-	client.println(data);
-	client.stop();
+	/*client.println(data);
+	client.stop();*/
+	return data;
 }
 String softwareReset(AsyncWebServerRequest *request) {
 
