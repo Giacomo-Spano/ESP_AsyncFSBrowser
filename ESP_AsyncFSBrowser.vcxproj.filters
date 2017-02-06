@@ -13,9 +13,51 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="data">
+      <UniqueIdentifier>{d06a8880-c0ac-45fc-9b83-3009dc647e8b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="html">
+      <UniqueIdentifier>{16ea028f-3937-4d9e-a091-09a2e2655285}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <None Include="ESP_AsyncFSBrowser.ino" />
+    <None Include="html\button.css">
+      <Filter>html</Filter>
+    </None>
+    <None Include="html\ESP8266.css">
+      <Filter>html</Filter>
+    </None>
+    <None Include="html\heater.html">
+      <Filter>html</Filter>
+    </None>
+    <None Include="html\heater.js">
+      <Filter>html</Filter>
+    </None>
+    <None Include="html\index.html">
+      <Filter>html</Filter>
+    </None>
+    <None Include="html\index.js">
+      <Filter>html</Filter>
+    </None>
+    <None Include="html\settings.html">
+      <Filter>html</Filter>
+    </None>
+    <None Include="html\settings.js">
+      <Filter>html</Filter>
+    </None>
+    <None Include="html\webduino.js">
+      <Filter>html</Filter>
+    </None>
+    <None Include="data\heater.html">
+      <Filter>data</Filter>
+    </None>
+    <None Include="data\index.html">
+      <Filter>data</Filter>
+    </None>
+    <None Include="data\settings.html">
+      <Filter>data</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="__vm\.ESP_AsyncFSBrowser.vsarduino.h">

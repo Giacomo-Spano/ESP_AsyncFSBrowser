@@ -85,7 +85,7 @@ gulp.task('html', function() {
 /* Build file system */
 gulp.task('buildfs', ['clean', 'files', 'html']);
 gulp.task('buildfs2', ['clean', 'files', 'inline']);
-gulp.task('default', ['buildfs']);
+gulp.task('default', ['buildfs2']);
  
 // -----------------------------------------------------------------------------
 // PlatformIO support
